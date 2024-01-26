@@ -1,0 +1,20 @@
+# Returns time until 2024 anniversary (10 Oct.) and reminders of what to prepare
+remind_me <- function(){
+  today <- as.Date(Sys.time())
+  next_anniversary <- as.Date("2024-10-10")
+  hours_till <- as.numeric(difftime(next_anniversary, today, units = "hours"))
+  days_till <- as.numeric(difftime(next_anniversary, today, units = "days"))
+  weeks_till <- as.numeric(difftime(next_anniversary, today, units = "weeks"))
+  if(days_till >= 7)
+    cat("Only", weeks_till, "weeks until our anniversary <3", '\n',
+        "Only", days_till, "days until our anniversary <3", '\n',
+        "Counting hours is a lil cringe, but here you go:", hours_till, "hours until our anniversary", '\n')
+  if(14 < days_till & days_till < 100) # The reminder below is relevant long-term
+    print("Time to start brainstorming date ideas")
+  if(days_till < 7)
+    cat("Only", days_till, "days until our anniversary <3", '\n',
+        "Counting hours is a lil cringe, but here you go:", hours_till, "hours until our anniversary", '\n')
+  if(days_till < 14) # The reminder below is relevant short-term
+    print("Have you chosen a date idea?")
+}
+remind_me()
