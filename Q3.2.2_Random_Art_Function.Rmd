@@ -2,7 +2,7 @@
 title: "Random_Art_Function"
 author: "Eline de Vries"
 date: "2024-01-26"
-output: html_document
+output: rmarkdown::github_document
 ---
 
 ```{r}
